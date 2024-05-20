@@ -58,9 +58,9 @@ public:
             cout << "Ошибка открытия файла!" << endl;
         }
         else {
-            outfile << firstName << " " << lastName << " "
-                << experience << " " << hourlyWage << " " << hoursWorked << " "
-                << calculateSalary() << " " << calculateBonus() << endl;
+            outfile << firstName << "  " << lastName << "  "
+                << experience << "   " << hourlyWage << "   " << hoursWorked << "  "
+                << calculateSalary() << "  " << calculateBonus() << endl;
             outfile.close();
         }
     }
@@ -92,6 +92,12 @@ void printWorkerInfoFromFile(const string& filename) {
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+
+    ofstream outfile("workers.txt");
+    outfile << "Имя" << "   " << "Фамилия" << "  " << "Стаж" << "  "
+        << "Часовая зп" << "  " << "Отработанные часы" << "  "
+        << "ЗП" << "  " << "Премия" << endl;
+    outfile.close();
 
     Worker employee1;
     Worker employee2;
